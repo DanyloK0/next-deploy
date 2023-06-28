@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({name, role}) => {
             </button> */}
                 <ul className="flex flex-row font-medium  mt-4  md:space-x-8 md:mt-0 md:border-0">
                     <li> <a href="/home" className="block py-2  text-gray-300 hover:text-white"  aria-current="page">Home</a> </li>
-                    <li> <a href="/activities" className="block py-2 text-gray-300 hover:text-white">Attività</a> </li>
+                    <li> <a href="/catalog" className="block py-2 text-gray-300 hover:text-white">Catalog</a> </li>
                     <li>
                         <button id="dropdownNavbarSearchButton" onClick={toggleSearch} aria-label='dropdownNavbarSearchButton' data-dropdown-toggle="dropdownNavbarSearchButton" className="flex items-center py-2 text-gray-300  hover:text-white">Ricerca <svg className="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg></button>
                         <div id="dropdownNavbarSearch" className={`z-10 ${isSearchOpen ? 'block' : 'hidden'} font-normal absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44`}>
@@ -94,7 +94,7 @@ const Header: React.FC<HeaderProps> = ({name, role}) => {
                                 <li> <a href="modificaPassword" className="block px-4 py-2 hover:bg-gray-100">Modifica password</a> </li>
                                 <li> <a href="#" className="block px-4 py-2 hover:bg-gray-100">Deleghe</a> </li>
                             </ul>
-                            <div className="py-1"> <a href="/login" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign out</a></div>
+                            <div className="py-1"> <a href="/" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign out</a></div>
                         </div>
                     </li>
                 </ul>
