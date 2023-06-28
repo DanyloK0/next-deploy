@@ -1,12 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import { Gadget } from '../model/gadget';
 
 const API = 'https://my-json-server.typicode.com/training-api/next-course-gadgets/gadgets';
 
-interface CatalogIndexProps {
-    data: Gadget[]
-}
 
 export const getServerSideProps = async() => {
     const data = await fetch(API);
