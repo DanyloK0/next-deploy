@@ -4,14 +4,14 @@ import Image from 'next/image';
 const API = 'https://my-json-server.typicode.com/training-api/next-course-gadgets/gadgets';
 
 
-export const getServerSideProps = async() => {
+export const getData = async() => {
     const data = await fetch(API);
     console.log(data)
     return data.json();
 }
 
 export default async function Catalog() {
-    const data = await getServerSideProps()
+    const data = await getData()
     return (
     <>
         <h1>Catalog SSR</h1>
