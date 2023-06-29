@@ -1,10 +1,11 @@
 import React from 'react';
 interface CardProps {
-    title: string;
-    description: string;
-    quantity: number;
-    icon: string;
-    color: string;
+    title?: string;
+    description?: string;
+    quantity?: number;
+    icon?: string;
+    color?: string;
+    onClick?:any;
 }
 const Card: React.FC<CardProps> = ({ title, description, quantity, icon, color }) => {
     return (

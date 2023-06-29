@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
-import { Button } from "../components/button/button";
-import Card from "../components/card/card";
+import { Button } from "../../components/button/button";
+import Card from "../../components/card/card";
 
 export default function Home() {
     const jsonData = [

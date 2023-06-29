@@ -23,7 +23,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet" />
       </Head>
       <body>
-        <Header name='Sydema' role='Amministratore'/>
+        
           {children}
         {/* <Footer/> */}
       </body>
