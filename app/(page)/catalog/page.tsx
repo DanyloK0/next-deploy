@@ -4,6 +4,7 @@ import { Suspense } from 'react'
 
 const API = 'https://my-json-server.typicode.com/training-api/next-course-gadgets/gadgets';
 
+
 export default async function Catalog() {
     const getData = async() => {
         const data = await fetch(API);
