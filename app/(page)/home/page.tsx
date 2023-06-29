@@ -1,6 +1,5 @@
 'use client'
 import React from "react";
-import { Button } from "../../components/button/button";
 import Card from "../../components/card/card";
 
 export default function Home() {
@@ -16,8 +15,6 @@ export default function Home() {
             {jsonData.map((item, index) => (
                 <Card key={index} title={item.title} description={item.description} quantity={item.quantity} icon={item.icon} color={item.color}/>
             ))}
-            <Button primary label='Primary button'/>
-            <Button label='Secondary button'/>
         </div>
     )
 }
