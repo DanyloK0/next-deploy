@@ -1,10 +1,10 @@
-'use client'
 import GadgetListSSR from "./gadgetssr";
+import Settings from "../settings/page";
 
-export default function Settings() {
+export default function Catalog() {
     return (
         <div>
-            <GadgetListSSR/>
+            <GadgetListSSR client={<Settings/>}/>
         </div>
     )
 }

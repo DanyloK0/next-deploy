@@ -2,8 +2,12 @@ import React from 'react';
 interface ButtonProps {
     primary?: boolean;
     backgroundColor?: string;
-    label: string;
+    label?: string;
     onClick?:any;
+    onSave?:any;
+    onCancel?:any;
+    toggleEdit?:any;
+    editing?: boolean;
 }
 
 export const Button = ({ primary = false, backgroundColor, label, ...props }: ButtonProps) => {
