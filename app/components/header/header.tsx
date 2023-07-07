@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useRef, useState } from "react";
 import Image from 'next/image';
+import { Link, useTranslations } from "next-intl";
 
 interface HeaderProps {
     name: string;
@@ -11,6 +12,7 @@ const Header: React.FC<HeaderProps> = ({name, role}) => {
         const [isSearchOpen, setSearchOpen] = useState(false);
         const [isLanguageOpen, setLanguageOpen] = useState(false);
         const [isPowerOpen, setPowerOpen] = useState(false);
+        const t = useTranslations('Header');
         const toggleSearch = () => {
             setSearchOpen(!isSearchOpen);
         };
@@ -30,15 +32,15 @@ const Header: React.FC<HeaderProps> = ({name, role}) => {
                 className='pl-8'
             />
                 <ul className="flex flex-row font-medium  mt-4  md:space-x-8 md:mt-0 md:border-0">
-                    <li> <a href="/home" className="block py-2  text-gray-300 hover:text-white"  aria-current="page">Home</a> </li>
-                    <li> <a href="/catalog" className="block py-2 text-gray-300 hover:text-white">Catalog</a> </li>
+                    <li> <a href="/home" className="block py-2  text-gray-300 hover:text-white"  aria-current="page">{t('home')}</a> </li>
+                    <li> <a href="/catalog" className="block py-2 text-gray-300 hover:text-white">{t('catalog')}</a> </li>
                     <li>
-                        <button id="dropdownNavbarSearchButton" onClick={toggleSearch} aria-label='dropdownNavbarSearchButton' data-dropdown-toggle="dropdownNavbarSearchButton" className="flex items-center py-2 text-gray-300  hover:text-white">Ricerca <svg className="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg></button>
+                        <button id="dropdownNavbarSearchButton" onClick={toggleSearch} aria-label='dropdownNavbarSearchButton' data-dropdown-toggle="dropdownNavbarSearchButton" className="flex items-center py-2 text-gray-300  hover:text-white">{t('search')} <svg className="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg></button>
                         <div id="dropdownNavbarSearch" className={`z-10 ${isSearchOpen ? 'block' : 'hidden'} font-normal absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44`}>
                             <ul className="py-2 text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
-                                <li> <a href="/ricercaPosizioneSolr" className="block px-4 py-2 hover:bg-gray-100">Posizioni</a> </li>
-                                <li> <a href="/ricercaPraticaMutuo" className="block px-4 py-2 hover:bg-gray-100 ">Pratiche di mutuo</a> </li>
-                                <li> <a href="/ricercaPraticaNoleggioVeicoliSolr" className="block px-4 py-2 hover:bg-gray-100">Pratiche noleggio veicoli</a> </li>
+                                <li> <a href="/ricercaPosizioneSolr" className="block px-4 py-2 hover:bg-gray-100">{t('positions')}</a> </li>
+                                <li> <a href="/ricercaPraticaMutuo" className="block px-4 py-2 hover:bg-gray-100 ">{t("mortgagePractices")}</a> </li>
+                                <li> <a href="/ricercaPraticaNoleggioVeicoliSolr" className="block px-4 py-2 hover:bg-gray-100">{t("vehicleRentalPractices")}</a> </li>
                             </ul>
                         </div>
                     </li>
@@ -70,11 +72,9 @@ const Header: React.FC<HeaderProps> = ({name, role}) => {
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M3 3v1.5M3 21v-6m0 0l2.77-.693a9 9 0 016.208.682l.108.054a9 9 0 006.086.71l3.114-.732a48.524 48.524 0 01-.005-10.499l-3.11.732a9 9 0 01-6.085-.711l-.108-.054a9 9 0 00-6.208-.682L3 4.5M3 15V4.5" />
                             </svg>
                         <svg className="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg></button>
-                        <div id="dropdownNavbarLanguage" className={`z-10 ${isLanguageOpen ? 'block' : 'hidden'} font-normal absolute right-4 bg-white divide-y divide-gray-100 rounded-lg shadow w-44`}>
-                            <ul className="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                                <li> <a href="#" className="block px-4 py-2 hover:bg-gray-100">Italiano</a> </li>
-                                <li> <a href="#" className="block px-4 py-2 hover:bg-gray-100">Inglese</a> </li>
-                            </ul>
+                        <div id="dropdownNavbarLanguage" className={`z-10 ${isLanguageOpen ? 'block py-2 text-sm text-gray-700' : 'hidden'} font-normal absolute right-4 bg-white divide-y divide-gray-100 rounded-lg shadow w-44`}>
+                                <Link href="/home" locale="en" className="block px-4 py-2 hover:bg-gray-100">{t("english")}</Link>
+                                <Link href="/home" locale="it" className="block px-4 py-2 hover:bg-gray-100">{t("italian")}</Link>
                         </div>
                     </li>
                     <li>
@@ -85,12 +85,12 @@ const Header: React.FC<HeaderProps> = ({name, role}) => {
                             <svg className="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                         </button>
                         <div id="dropdownNavbarPower" className={`z-10 ${isPowerOpen ? 'block' : 'hidden'} font-normal absolute right-4 bg-white divide-y divide-gray-100 rounded-lg shadow w-44`}>
-                            <ul className="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
-                                <li> <a href="/selezioneProfilo" className="block px-4 py-2 hover:bg-gray-100">Cambia utente</a> </li>
-                                <li> <a href="modificaPassword" className="block px-4 py-2 hover:bg-gray-100">Modifica password</a> </li>
-                                <li> <a href="#" className="block px-4 py-2 hover:bg-gray-100">Deleghe</a> </li>
+                            <ul className="py-2 text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
+                                <li> <a href="/selezioneProfilo" className="block px-4 py-2 hover:bg-gray-100">{t("changeUser")}</a> </li>
+                                <li> <a href="modificaPassword" className="block px-4 py-2 hover:bg-gray-100">{t("changePassword")}</a> </li>
+                                <li> <a href="#" className="block px-4 py-2 hover:bg-gray-100">{t("delegations")}</a> </li>
                             </ul>
-                            <div className="py-1"> <a href="/" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign out</a></div>
+                            <div className="py-1"> <a href="/" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 ">{t("logOut")}</a></div>
                         </div>
                     </li>
                 </ul>

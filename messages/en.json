@@ -1,0 +1,35 @@
+{
+    "Index": {
+        "edit": "Edit",
+        "readOnly": "Read Only",
+        "user": "User",
+        "logIn": "Log in",
+        "password": "Password",
+        "title": "Title",
+        "home": "Home",
+        "description": "Description",
+        "evidence": "Evidence",
+        "catalog": "Catalog",
+        "settings": "Settings",
+        "search": "Search",
+        "viste": "Labels"
+    },
+
+
+    "Header": {
+        "home": "Home",
+        "catalog": "Catalog",
+        "about": "About",
+        "contact": "Contact",
+        "search": "Search",
+        "positions": "Positions",
+        "mortgagePractices": "Mortgage Practices",
+        "vehicleRentalPractices": "Vehicle Rental Practices",
+        "italian": "Italian",
+        "english": "English",
+        "changeUser": "Change User",
+        "changePassword": "Change Password",
+        "delegations": "Delegations",
+        "logOut": "Log Out"
+    }
+}

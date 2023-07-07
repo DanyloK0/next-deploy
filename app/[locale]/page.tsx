@@ -1,12 +1,14 @@
 'use client'
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Button } from './components/button/button';
+import { Button } from '../components/button/button';
+import { useTranslations } from 'next-intl';
 const LoginPage = () => {
     const router = useRouter();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const t = useTranslations('Index');
 
     const handleEmailChange = (e:any) => {
         setEmail(e.target.value);
@@ -29,10 +31,10 @@ const LoginPage = () => {
     return (
         <div className="flex items-center justify-center h-screen">
             <form className="bg-white p-10 rounded shadow-md" onSubmit={handleSubmit}>
-                <h2 className="text-2xl font-bold mb-5">Login</h2>
+                <h2 className="text-2xl font-bold mb-5">{t('logIn')} </h2>
                 <div className="mb-4">
                     <label htmlFor="email" className="block font-medium mb-1">
-                        Utente
+                        {t('user')}
                     </label>
                     <input
                         type="email"
@@ -45,7 +47,7 @@ const LoginPage = () => {
                 </div>
                 <div className="mb-6">
                     <label htmlFor="password" className="block font-medium mb-1">
-                        Password
+                        {t("password")}
                     </label>
                     <div className="relative">
                         <input
@@ -75,7 +77,7 @@ const LoginPage = () => {
                         </button>
                     </div>
                 </div>
-                <Button primary label='Login' onClick={handleSubmit}/>
+                <Button primary label={t('logIn')} onClick={handleSubmit}/>
             </form>
         </div>
     );

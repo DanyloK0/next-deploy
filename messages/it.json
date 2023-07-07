@@ -1,0 +1,34 @@
+{   
+    "Index": {
+        "edit": "Modifica",
+        "readOnly": "Solo Lettura",
+        "user": "Utente",
+        "logIn": "Accedi",
+        "password": "Password",
+        "title": "Titolo sezione",
+        "home": "Home",
+        "description": "Descrizione",
+        "catalog": "Catalogo",
+        "evidence": "In Evidenza",
+        "search": "Cerca",
+        "settings": "Impostazioni",
+        "viste": "Viste"
+
+    },
+    "Header": {
+        "home": "Home",
+        "catalog": "Catalogo",
+        "about": "About",
+        "contact": "Contatti",
+        "search": "Ricerca",
+        "positions": "Posizioni",
+        "mortgagePractices": "Pratiche di Mutuo",
+        "vehicleRentalPractices": "Pratiche noleggio veicoli",
+        "italian": "Italiano",
+        "english": "Inglese",
+        "changeUser": "Cambia utente",
+        "changePassword": "Cambia password",
+        "delegations": "Deleghe",
+        "logOut": "Esci"
+    }
+}
